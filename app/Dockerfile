@@ -22,4 +22,9 @@ RUN apt-get update && \
     apt-get install -y \
     g++ \
     git \
-    wget
+    wget \
+    openjdk-8-jdk \
+    python3-pip \
+    curl 
+
+RUN pip install konlpy
