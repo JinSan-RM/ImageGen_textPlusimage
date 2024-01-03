@@ -1,0 +1,12 @@
+tensorflow-datasets
+tensorflow-hub
+scipy
+matplotlib
+pandas
+numpy
+torch
+torchvision
+opencv-python-headless
+fastapi
+uvicorn
+python-multipart
