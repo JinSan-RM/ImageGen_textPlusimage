@@ -38,11 +38,11 @@ papago_headers = {
 }
 
 
-class Paraphrasing:
+class PromptEnglish:
     def __init__(self, text):
         self.text = text
         
-    def get_response(self):
+    def text_paraphrasing(self):
         body = json.dumps({"user_id" : "NIPA", 
                            "ret_sentences" : 50,
                            "diversity": 3, 
@@ -64,7 +64,7 @@ class Paraphrasing:
             return f"HTTP error {response.status_code}\n{response.text}"
 
     @classmethod
-    def papago_translate(cls, text_list):
+    def papago_translation(cls, text_list):
         
         translated_texts = []
         
