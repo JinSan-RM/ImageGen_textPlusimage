@@ -4,8 +4,15 @@ from diffusers.utils import load_image
 from PIL import Image
 import numpy as np
 from . import text_preprocessing
+from fastapi import FastAPI
+import requests
+import opencv as cv2
 
+app = FastAPI()
 
+@app.get("/")
+def run_generate(prompt, source : str):
+    pass
 
 url = ''
 class ModelPipeline:
@@ -25,7 +32,9 @@ class ModelPipeline:
         self.pipe.load_lora_weights(model_path)
 
     def input_img(self):
-        image = tag.downloadImage(self.url)
+        response = requests.get(url)
+        image_array = np.array(bytearray(response.content), dtype=np.uint8)
+        image = cv2.imdecode(image_array, cv2.IMREAD_COLOR)
         init_image = load_image(image).convert("RGB")
         return init_image
 
