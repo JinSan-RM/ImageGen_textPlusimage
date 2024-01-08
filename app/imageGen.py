@@ -3,6 +3,8 @@ import torch
 from diffusers.utils import load_image
 from PIL import Image
 import numpy as np
+import requests
+import cv2
 from . import text_preprocessing
 from fastapi import FastAPI
 import requests
@@ -43,14 +45,14 @@ class ModelPipeline:
         return prompt
 
     def run_generate(self):
-        generator = torch.Generator("cuda").manual_seed(43)
+        generator = torch.Generator("cuda").manual_seed(43) #manual_seed는 랜덤 시드를 고정하는 값
         init_image = self.input_img()
         processed_prompt = self.text_gen(self.prompt)
         image = self.pipe(
             prompt=processed_prompt,
             negative_prompt=self.negative_prompt,
             generator=generator,
-            num_inference_steps=40,
+            num_inference_steps=20,
             image=init_image,
             output_type="PIL"
         )
@@ -65,6 +67,7 @@ class ModelPipeline:
 
         img.save(self.output_path)
 
+# 예시 코드
 # 객체 생성 및 메소드 호출
 model_pipeline = ModelPipeline(
     url = "/tf/notebook/LEEEUNBEE_1.jpg",
