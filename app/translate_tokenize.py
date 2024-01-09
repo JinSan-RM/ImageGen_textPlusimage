@@ -28,8 +28,8 @@ genie_headers = {
 }
 
 # papago api 활용 변수
-papago_client_id = "fsnS2UC0g3Jw11PIynSc"  # 개발자 센터에서 발급받은 클라이언트 ID
-papago_client_secret = 'xP1iJ3P8Ct'  # 개발자 센터에서 발급받은 클라이언트 시크릿
+papago_client_id = "w979m4b35v"  # 개발자 센터에서 발급받은 클라이언트 ID
+papago_client_secret = 'lWh1jDMncHEAjJ2dlPkze5aauxNhqiVvRrPER507'  # 개발자 센터에서 발급받은 클라이언트 시크릿
 papago_url = 'https://openapi.naver.com/v1/papago/n2mt'
 papago_headers = {
     'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -113,3 +113,4 @@ class PromptEnglish:
             result.append(temp)
             
         return result
+    
