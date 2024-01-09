@@ -23,7 +23,7 @@ StableDiffusionXLImg2ImgPipeline 클래스를 활용하여 이미 학습된 Stab
 
 
 ## ⚙ Project Process
-![title](https://github.com/JinSan-RM/ImageGen_textPlusimage/assets/143769249/90709370-25f1-45dd-b4fa-3fd62039c4a2)
+<img src = "https://github.com/JinSan-RM/ImageGen_textPlusimage/assets/143769249/f1b63cd0-b5e8-4f39-92b7-30cb084125a7" width="80%" height="80%">
 
 
 ### Preprocessing for Prompt
