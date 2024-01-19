@@ -28,27 +28,15 @@ StableDiffusionXLImg2ImgPipeline 클래스를 활용하여 이미 학습된 Stab
 
 ### Preprocessing for Prompt
 프롬포트는 한국어와 영어 두가지 버전으로 개발되었다.
-#### 1️⃣ 한국어 프롬포트
-  __Step1. 입력 받은 텍스트와 유사한 문장 다수 생성 - Paraphrasing API__
-  
-  __Step2. 모든 문장들 토큰화__
-  
-  __Step3. 조사 제거, 어간 추출__
-  
-  __Step4. 단어별 가중치 부여__
 
-
-  
-#### 2️⃣ 영어 프롬포트
+#### 1️⃣ 영어 프롬포트
   __Step1. 입력받은 텍스트와 유사한 문장 다수 생성 - Paraphrasing API__
   
   __Step2. 모든 문장들 영어로 번역 - Papago API__
 
-  __Step3. 모든 영어 문장들 토큰화__
+  __Step3. KeyBERT 모델을 활용해 키워드와 가중치 추출__
   
-  __Step4. stopwords 말뭉치를 활용한 불용어 제거__
-  
-  __Step5. 단어별 가중치 부여__  *추가 예정*
+  __Step4. 텍스트에 가중치를 부여하여 프롬포트 형식으로 변환__
 
 
 #### 📌 사용한 API
@@ -75,3 +63,29 @@ __Papago API__
   * 목적 언어: English
 
   [출처] https://genielabs.ai/tech/detail?domain=nlp&contentsSeq=114
+
+
+#### 📌 사용한 Model
+__KeyBERT__
+
+*BERT를 기반으로 한 모델로, 문서를 가장 잘 나타내는 키워드를 찾고 유사도를 추출해준다. 
+- keyphrase_ngram_range: 키워드/키 구문의 길이 
+- stop_words: 불용어
+
+
+*BERT: 자연어처리를 위해 2018년에 구글에서 고안한 transformers기반의 머신러닝 모델. 문장의 전체 구조를 양방향으로 학습하여 문맥을 파악한 뒤, 단어를 임베딩한다. 
+
+
+
+## ⚙ Project Process
+<img src = "https://github.com/JinSan-RM/ImageGen_textPlusimage/assets/143769249/f1b63cd0-b5e8-4f39-92b7-30cb084125a7" width="80%" height="80%">
+
+
+#### 2️⃣ 한국어 프롬포트
+  __Step1. 입력 받은 텍스트와 유사한 문장 다수 생성 - Paraphrasing API__
+  
+  __Step2. 모든 문장들 토큰화__
+  
+  __Step3. 조사 제거, 어간 추출__
+  
+  __Step4. 단어별 가중치 부여__
