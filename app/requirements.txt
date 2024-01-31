@@ -1,3 +1,4 @@
+Flask==3.0.0
 tensorflow-datasets
 tensorflow-hub
 scipy
@@ -9,7 +10,9 @@ torchvision
 opencv-python-headless
 fastapi
 uvicorn
-python-multipart
-request
-opencv
-cv2
+diffusers       # [jungjw] 빌드시 오류로 추가 설치
+transformers    # [jungjw] 빌드시 오류로 추가 설치
+accelerate
+keybert
+# request
+# cv2

@@ -1,3 +1,6 @@
+# 한국어 프롬포트를 위한 클래스 
+# 토큰화와 키워드까지 추출했지만, 가중치 부여는 x
+
 import requests
 import json
 from datetime import datetime
@@ -27,13 +30,11 @@ headers = {
 
 url = "https://aiapi.genielabs.ai/kt/nlp/paraphrasing"
 
-class Paraphrasing:
+class KoreanPrompt:
     def __init__(self, text):
         self.text = text
         
     def get_response(self):
-       
-        
         body = json.dumps({"user_id" : "NIPA", 
                            "ret_sentences" : 50,
                            "diversity": 3, 

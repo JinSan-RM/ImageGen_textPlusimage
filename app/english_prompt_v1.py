@@ -1,3 +1,6 @@
+# 영어 프롬포트 v1
+# 토큰화까지만 진행된 버전. 가중치 부여를 하지 못했기에 사용할일은 없음
+
 import requests
 import nltk
 from nltk.corpus import stopwords
